@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- My CSS -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <title>Dashboard | Forum Coding TIF RM 21</title>
+  </head>
+  <body>
+    <main class="about">
+      <section class="about-content">
+        <div class="container">
+          <div class="row x-content">
+            <div class="col-md-6 x-left">
+              <h1 id="welcome">Selamat Datang User di Dashboard TIF RM</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
+                modi quo numquam commodi eaque architecto, odio eos error sed
+                officia placeat enim voluptatibus est maiores impedit earum
+                minus asperiores debitis dicta aliquam in saepe excepturi
+                veniam.
+              </p>
+              <button class="btn btn-more" type="button" onclick="btnLogout()">
+                Logout
+              </button>
+            </div>
+            <div class="col-md-6 x-right">
+              <img src="assets/img/dshbrd.svg" alt="dashboard" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      let user = localStorage.getItem("username");
+      let password = localStorage.getItem("password");
+      if (!user && !password) {
+        document.location.href = "login.html";
+      } else {
+        document.getElementById(
+          "welcome"
+        ).innerHTML = `Selamat Datang ${user} di Dashboard TIF RM`;
+      }
+
+      const btnLogout = () => {
+        localStorage.clear();
+
+        document.location.href = "login.html";
+      };
+    </script>
+  </body>
+</html>
